@@ -1,6 +1,12 @@
+import { Heading } from "@/components"
+
 const index = () => {
   return (
-    <div>index</div>
+    <div>
+     <Heading tag="h2">
+      nma
+     </Heading>
+    </div>
   )
 }
 
