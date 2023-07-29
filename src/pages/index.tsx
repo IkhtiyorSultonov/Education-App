@@ -1,4 +1,4 @@
-import { Heading,Text } from "@/components"
+import { Heading,Tag,Text } from "@/components"
 
 const index = () => {
   return (
@@ -9,6 +9,12 @@ const index = () => {
      <Text size="s">
       Text
      </Text>
+     <Tag size="m" color="red">
+     Red
+     </Tag>
+     <Tag size="m" color="green">
+      Green
+     </Tag>
     </div>
   )
 }
