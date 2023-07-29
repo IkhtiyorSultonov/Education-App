@@ -1,4 +1,4 @@
-import { Heading } from "@/components"
+import { Heading,Text } from "@/components"
 
 const index = () => {
   return (
@@ -6,6 +6,9 @@ const index = () => {
      <Heading tag="h2">
       nma
      </Heading>
+     <Text size="s">
+      Text
+     </Text>
     </div>
   )
 }
