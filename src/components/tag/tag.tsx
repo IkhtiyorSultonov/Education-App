@@ -1,7 +1,7 @@
 import { TagProps } from "./tag.props"
 import style  from "./tag.module.css"
 import cn from "classnames"
-const Tag = ({size='m' ,color='primary',children}:TagProps):JSX.Element => {
+const Tag = ({size='m' ,color='primary',children,...props}:TagProps):JSX.Element => {
   return <div className={cn(style.tag,{
    [ style.s]:size==='s',
    [ style.m]:size==='m',
@@ -10,7 +10,8 @@ const Tag = ({size='m' ,color='primary',children}:TagProps):JSX.Element => {
    [ style.primary]:color==='primary',
 
 
-  })}>{children}</div>
+  })}
+  {...props}>{children}</div>
 }
 
 export default Tag
