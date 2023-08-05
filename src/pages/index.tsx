@@ -79,7 +79,7 @@ export default withLayout(index);
 
 export const getServerSideProps:GetServerSideProps=async ({}) =>{
 
-  const {data}=await axios.post('http://localhost:8100/page-find',{"firstcategory":0})
+  const {data}=await axios.post(`${process.env.NEXT_PUBLIC_DOMAIN}api/page-find`,{"firstcategory":0})
   return{
     props:{
       data,
