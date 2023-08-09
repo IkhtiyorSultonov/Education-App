@@ -12,15 +12,26 @@ import  { withLayout } from "../layout/layout";
 import { useState } from "react";
 import { GetServerSideProps } from "next";
 import axios from "axios";
+<<<<<<< HEAD
 const index = () => {
   
+=======
+import { MenuItem } from "@/interfaces/menu.interface";
+const index = ({firstcategory,menu}:HomeProps):JSX.Element => {
+  
+console.log(menu);
+>>>>>>> 19b2343 (Context provider)
 
   
   const [isClick, setisClick] = useState(false);
   const [rating, setrating] = useState<number>(4);
   return (
     <>
+<<<<<<< HEAD
       <header>
+=======
+      
+>>>>>>> 19b2343 (Context provider)
         <Heading tag="h2">nma</Heading>
         <Text size="s">Text</Text>
         <Tag size="m" color="red">
@@ -70,13 +81,21 @@ const index = () => {
           optio esse molestiae eaque autem, molestias accusantium, et tenetur
           quis perferendis cumque.
         </Card>
+<<<<<<< HEAD
       </header>
+=======
+    
+ 
+    
+      
+>>>>>>> 19b2343 (Context provider)
     </>
   );
 };
 
 export default withLayout(index);
 
+<<<<<<< HEAD
 export const getServerSideProps:GetServerSideProps=async ({}) =>{
 
   const {data}=await axios.post(`${process.env.NEXT_PUBLIC_DOMAIN}api/page-find`,{"firstcategory":0})
@@ -85,4 +104,21 @@ export const getServerSideProps:GetServerSideProps=async ({}) =>{
       data,
     },
   }
+=======
+export const getServerSideProps:GetServerSideProps<HomeProps>=async ({}) =>{
+  const firstcategory=0
+  const {data:menu}=await axios.post<MenuItem[]>(`${process.env.NEXT_PUBLIC_DOMAIN}api/page-find`,{firstcategory})
+  return{
+    props:{
+      menu,
+      firstcategory,
+    },
+  }
+}
+
+
+interface HomeProps extends Record<string,unknown>{
+  firstcategory:number;
+  menu:MenuItem[];
+>>>>>>> 19b2343 (Context provider)
 }
