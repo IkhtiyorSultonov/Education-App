@@ -1,44 +1,30 @@
-import { Component, FunctionComponent } from "react"
-import { Footer, Header, Sidebar } from "."
-import { LayoutProps } from "./layout.props"
-import styles from "./layout.module.css"
-<<<<<<< HEAD
-=======
-import { AppContextProvider, IAppContext } from "@/context/context"
->>>>>>> 19b2343 (Context provider)
+import { FunctionComponent } from 'react';
+import Footer from './footer/footer';
+import Header from './header/header';
+import { LayoutProps } from './layout.props';
+import Sidebar from './sidebar/sidebar';
+import styles from './layout.module.css';
+import { AppContextProvider, IAppContext } from '@/context/context';
 
-const Layout = ({children}:LayoutProps):JSX.Element => {
-  return(
-  <div className={styles.wrapper}>
-    <Header className={styles.header}/>
-     <Sidebar className={styles.sidebar}/>
-      <div className={styles.body}>{children}</div>
-      <Footer className={styles.footer}/>
-  </div>
-  )
-}
+const Layout = ({ children }: LayoutProps): JSX.Element => {
+	return (
+		<div className={styles.wrapper}>
+			<Header className={styles.header} />
+			<Sidebar className={styles.sidebar} />
+			<div className={styles.body}>{children}</div>
+			<Footer className={styles.footer} />
+		</div>
+	);
+};
 
-<<<<<<< HEAD
-export const withLayout=<T extends Record<string,unknown>> (Component:FunctionComponent<T>)=>{
-  return function withLayoutComponent(props:T):JSX.Element {
-    console.log(props);
-    
-    return (
-      <Layout>
-          <Component {...props}/>
-=======
-export const withLayout=<T extends Record<string,unknown> & IAppContext> (Component:FunctionComponent<T>)=>{
-  return function withLayoutComponent(props:T):JSX.Element {
-   
-    
-    return (
-      <Layout>
-        <AppContextProvider menu={props.menu} firstCategory={props.firstCategory}>
-        <Component {...props}/>
-        </AppContextProvider>
-        
->>>>>>> 19b2343 (Context provider)
-      </Layout>
-    )
-  }
-}
+export const withLayout = <T extends Record<string, unknown> & IAppContext>(Component: FunctionComponent<T>) => {
+	return function withLayoutComponent(props: T): JSX.Element {
+		return (
+			<Layout>
+				<AppContextProvider menu={props.menu} firstCategory={props.firstCategory}>
+					<Component {...props} />
+				</AppContextProvider>
+			</Layout>
+		);
+	};
+};
