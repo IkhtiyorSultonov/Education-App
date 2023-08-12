@@ -12,37 +12,17 @@ import  { withLayout } from "../layout/layout";
 import { useState } from "react";
 import { GetServerSideProps } from "next";
 import axios from "axios";
-<<<<<<< HEAD
 import { MenuItem } from "@/interfaces/menu.interface";
 const index = ({firstcategory,menu}:HomeProps):JSX.Element => {
   
 console.log(menu);
-=======
-<<<<<<< HEAD
-const index = () => {
-  
-=======
-import { MenuItem } from "@/interfaces/menu.interface";
-const index = ({firstcategory,menu}:HomeProps):JSX.Element => {
-  
-console.log(menu);
->>>>>>> 19b2343 (Context provider)
->>>>>>> 5c850d4698d38c993e0053ed07ba8d7c81f0d040
 
   
   const [isClick, setisClick] = useState(false);
   const [rating, setrating] = useState<number>(4);
   return (
     <>
-<<<<<<< HEAD
       
-=======
-<<<<<<< HEAD
-      <header>
-=======
-      
->>>>>>> 19b2343 (Context provider)
->>>>>>> 5c850d4698d38c993e0053ed07ba8d7c81f0d040
         <Heading tag="h2">nma</Heading>
         <Text size="s">Text</Text>
         <Tag size="m" color="red">
@@ -92,63 +72,33 @@ console.log(menu);
           optio esse molestiae eaque autem, molestias accusantium, et tenetur
           quis perferendis cumque.
         </Card>
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-      </header>
-=======
->>>>>>> 5c850d4698d38c993e0053ed07ba8d7c81f0d040
     
- 
+  <ul>
+  {menu.map(c=>(
+        <li>{c._id.secondCategory}</li>
+      ))}
+  </ul>
     
       
-<<<<<<< HEAD
-=======
->>>>>>> 19b2343 (Context provider)
->>>>>>> 5c850d4698d38c993e0053ed07ba8d7c81f0d040
     </>
   );
 };
 
 export default withLayout(index);
 
-<<<<<<< HEAD
 export const getServerSideProps:GetServerSideProps<HomeProps>=async ({}) =>{
   const firstcategory=0
-  const {data:menu}=await axios.post<MenuItem[]>(`${process.env.NEXT_PUBLIC_DOMAIN}api/page-find`,{firstcategory})
-=======
-<<<<<<< HEAD
-export const getServerSideProps:GetServerSideProps=async ({}) =>{
-
-  const {data}=await axios.post(`${process.env.NEXT_PUBLIC_DOMAIN}api/page-find`,{"firstcategory":0})
->>>>>>> 5c850d4698d38c993e0053ed07ba8d7c81f0d040
+  const {data:menu}=await axios.post(`${process.env.NEXT_PUBLIC_DOMAIN}api/page-find`,{firstcategory})
   return{
     props:{
       menu,
       firstcategory,
     },
   }
-<<<<<<< HEAD
-=======
-=======
-export const getServerSideProps:GetServerSideProps<HomeProps>=async ({}) =>{
-  const firstcategory=0
-  const {data:menu}=await axios.post<MenuItem[]>(`${process.env.NEXT_PUBLIC_DOMAIN}api/page-find`,{firstcategory})
-  return{
-    props:{
-      menu,
-      firstcategory,
-    },
-  }
->>>>>>> 5c850d4698d38c993e0053ed07ba8d7c81f0d040
 }
 
 
 interface HomeProps extends Record<string,unknown>{
   firstcategory:number;
   menu:MenuItem[];
-<<<<<<< HEAD
-=======
->>>>>>> 19b2343 (Context provider)
->>>>>>> 5c850d4698d38c993e0053ed07ba8d7c81f0d040
 }
