@@ -15,6 +15,9 @@ import axios from "axios";
 import { MenuItem } from "@/interfaces/menu.interface";
 const index = ({firstcategory,menu}:HomeProps):JSX.Element => {
 
+  
+console.log(menu);
+
 
   
   const [isClick, setisClick] = useState(false);
@@ -100,4 +103,8 @@ export const getServerSideProps:GetServerSideProps<HomeProps>=async ({}) =>{
 interface HomeProps extends Record<string,unknown>{
   firstcategory:number;
   menu:MenuItem[];
+
 }
+
+
+

@@ -7,7 +7,9 @@ export enum PageCategory {
 export interface PageModel{
     _id:string;
     alias:string;
+
     title: string;
+
     tags:string[];
     description:string;
     hh:HhData[];
