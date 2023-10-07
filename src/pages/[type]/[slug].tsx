@@ -1,3 +1,4 @@
+import { firstLevelMenu } from "@/helpers/constants";
 import { MenuItem } from "@/interfaces/menu.interface";
 import { PageModel } from "@/interfaces/page.interface";
 import { ProductModel } from "@/interfaces/product.interface";
@@ -7,7 +8,7 @@ import { GetServerSideProps } from "next"
 
 
 
-const Index = ({menu,page ,products}:PageProps) => {
+const Index = ({products}:PageProps) => {
 
 
     
@@ -20,14 +21,14 @@ export default withLayout(Index)
 
 export const getServerSideProps: GetServerSideProps<PageProps> = async ({ query }) => {
     
-    const {slug}=query;
+    const {slug,type}=query;
     const firstcategory=0;
-    
-    const {data:menu}=await axios.post<MenuItem[]>(`${process.env.NEXT_PUBLIC_DOMAIN}api/page-find`,{firstcategory})
+    const firstCategortitem=firstLevelMenu.find(c=>c.route===type)
+    const {data:menu}=await axios.post<MenuItem[]>(`${process.env.NEXT_PUBLIC_DOMAIN}api/page-find`,{firstcategory:firstCategortitem?.id})
     const {data:page}=await axios.get<PageModel[]>(`${process.env.NEXT_PUBLIC_DOMAIN}api/page-find/${slug}`);
     const {data:products}=await axios.post<ProductModel[]>(`${process.env.NEXT_PUBLIC_DOMAIN}api/product-find`,{category:slug});
     return {
-        props:{menu,page,products}
+        props:{menu,page,products,firstcategory:firstCategortitem?.id}
     }
 };
 

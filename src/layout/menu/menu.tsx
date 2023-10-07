@@ -11,6 +11,7 @@ import { PageModel } from "@/interfaces/page.interface";
 const Menu = (): JSX.Element => {
   const { menu, firstCategory, setMenu } = useContext(AppContext);
   const router = useRouter();
+  
   const openSecondBlok = (category: string) => {
 		setMenu &&
 			setMenu(
@@ -74,8 +75,8 @@ const Menu = (): JSX.Element => {
   };
   const buildThirdLevel = (pages:PageItem[],route:string) => {
     return pages.map(p=>(
-      <Link key={p._id} href={`/${route}/${p.alias}`} className={cn(styles.thirdlevel,{
-        [styles.thirdLevelActive]:`/${route}/${p.alias}`===router.asPath
+      <Link key={p._id} href={`/${route}/${p._id}`} className={cn(styles.thirdlevel,{
+        [styles.thirdLevelActive]:`/${route}/${p._id}`===router.asPath
       })}>
         {p.title}
       </Link>
