@@ -19,7 +19,8 @@ const Menu = (): JSX.Element => {
 					if (c._id.secondCategory === category) {
 						c.isOpened = !c.isOpened;
 					}
-
+   
+          
 					return c;
 				})
 			);
@@ -35,7 +36,7 @@ const Menu = (): JSX.Element => {
               <Link href={c.route}>
                 <div className={cn(styles.firstLevel,{
                   [styles.firstLevelActive]:c.id===firstCategory,
-
+                  
                 })}>
                     {c.icon}
                     <span>{c.name}</span>

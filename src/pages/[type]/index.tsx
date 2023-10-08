@@ -32,7 +32,7 @@ export const getServerSideProps: GetServerSideProps<TypeProps> = async ({ query 
     }
   }
   
-  console.log(firtCategoryItem);
+  
   const {data:menu}=await axios.post<MenuItem[]>(`${process.env.NEXT_PUBLIC_DOMAIN}api/page-find`,{firstcategory:firtCategoryItem.id,})
 
   return{

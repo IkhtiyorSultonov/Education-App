@@ -13,15 +13,10 @@ import { useState } from "react";
 import { GetServerSideProps } from "next";
 import axios from "axios";
 import { MenuItem } from "@/interfaces/menu.interface";
-const index = ({firstcategory,menu}:HomeProps):JSX.Element => {
-
-  
-console.log(menu);
-
-
-  
+const index = ():JSX.Element => {
   const [isClick, setisClick] = useState(false);
   const [rating, setrating] = useState<number>(4);
+
   return (
     <>
       
@@ -75,11 +70,7 @@ console.log(menu);
           quis perferendis cumque.
         </Card>
     
-  <ul>
-  {menu.map(c=>(
-        <li>{c._id.secondCategory}</li>
-      ))}
-  </ul>
+
     
       
     </>
@@ -88,9 +79,10 @@ console.log(menu);
 
 export default withLayout(index);
 
+
 export const getServerSideProps:GetServerSideProps<HomeProps>=async ({}) =>{
-  const firstcategory=0
-  const {data:menu}=await axios.post(`${process.env.NEXT_PUBLIC_DOMAIN}api/page-find`,{firstcategory})
+ const firstcategory=1
+  const {data:menu}=await axios.post<MenuItem[]>(`${process.env.NEXT_PUBLIC_DOMAIN}api/page-find`,{firstcategory})
   return{
     props:{
       menu,

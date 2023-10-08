@@ -1,0 +1,1 @@
+export {default as CoursePageComponents} from "./course-page-components/course-page-components"
