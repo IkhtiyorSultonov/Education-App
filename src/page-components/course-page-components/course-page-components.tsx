@@ -1,15 +1,17 @@
 import { CoursePageComponentProps } from './course-page-components.props'
 import styles from "./course-page-components.module.css"
-import { Heading, Tag } from '@/components';
+import { Heading, HhData, Tag } from '@/components';
 
 const coursePageComponents = ({firstCategory,page,products}:CoursePageComponentProps):JSX.Element=> {
-  console.log(page);
+  console.log(page.hh);
   return (
     <div className={styles.wrapper}>
       {/*TITLE*/}
+        <div className={styles.title}>
         <Heading tag='h1'>{page.title}</Heading>
         <div>Sort...</div>
 
+        </div>
            {/*PRODUCTS*/}
            <div>PRODUCTS</div>
             {/*VACATIONS*/}
@@ -20,7 +22,7 @@ const coursePageComponents = ({firstCategory,page,products}:CoursePageComponentP
               </Tag>
             </div>
               {/*HHDATA*/}
-              <div>HHDATA</div>
+              {page.hh && <HhData  {...page.hh}/>}
     </div>
     )
 }

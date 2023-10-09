@@ -1,0 +1,13 @@
+.title{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    padding: 0 19px;
+}
+.hhTitle
+{
+    display: flex;
+    gap: 20px;
+   align-items: center;
+}
