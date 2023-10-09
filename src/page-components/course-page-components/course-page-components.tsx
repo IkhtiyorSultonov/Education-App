@@ -1,6 +1,6 @@
 import { CoursePageComponentProps } from './course-page-components.props'
 import styles from "./course-page-components.module.css"
-import { Heading, HhData, Tag } from '@/components';
+import { Advantages, Heading, HhData, Tag, Text } from '@/components';
 
 const coursePageComponents = ({firstCategory,page,products}:CoursePageComponentProps):JSX.Element=> {
   console.log(page.hh);
@@ -23,6 +23,32 @@ const coursePageComponents = ({firstCategory,page,products}:CoursePageComponentP
             </div>
               {/*HHDATA*/}
               {page.hh && <HhData  {...page.hh}/>}
+              {/*ADVANTAGES*/}
+              {page.advantages && page.advantages.length &&(
+                <>
+                <Heading tag='h2'>
+                  Advantages
+                </Heading>
+                 <Advantages advantages={page.advantages}/>
+                </>
+              )}
+              {/*DESCRIPTION*/ }
+              <Text>
+                {page.description}
+              </Text>
+              {/*SKILLS*/}
+              
+                <Heading tag='h2'>Skills</Heading>
+                {page.tags.length &&page.tags.map(c=>(
+                <Tag color='primary' key={c}> 
+                  {c}
+                </Tag>
+               ))
+
+               }
+              
+
+
     </div>
     )
 }
