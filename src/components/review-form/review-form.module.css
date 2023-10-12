@@ -1,0 +1,50 @@
+.form
+{
+    display: grid;
+    grid-template-columns: [start] auto  1fr auto auto [end];
+    align-items: center;
+    gap: 10px;
+    font-size: 14px;
+    line-height: 24px;
+}
+
+.title
+{
+    justify-self: left;
+}
+.description
+{
+    grid-column: start/end;
+}
+.rating 
+{
+    display: flex;
+    gap: 20px;
+}
+
+.info
+{
+
+    margin-left: 15px;
+}
+
+.submit{
+    grid-column: start/end;
+}
+@media  (max-width: 740px) {
+	.reviewForm {
+		grid-template-columns: [start] 1fr 1fr [end];
+	}
+	.rating{
+		grid-column: start / end;
+	}
+	.title {
+		justify-self: normal;
+	}
+}
+
+@media  (max-width: 570px) {
+	.reviewForm {
+		grid-template-columns: [start] 1fr [end];
+	}
+}

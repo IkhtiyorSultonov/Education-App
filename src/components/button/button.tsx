@@ -3,8 +3,8 @@ import styles  from "./button.module.css"
 import cn from "classnames"
 import ArrowIcon from "./arrow.svg"
 
-const Button = ({ appearence,arrow='none',children,...props }:ButtonProps):JSX.Element => {
-  return <button className={cn(styles.button,{
+const Button = ({className ,appearence,arrow='none',children,...props }:ButtonProps):JSX.Element => {
+  return <button className={cn(className,styles.button,{
     [styles.primary]:appearence==='primary',
     [styles.ghost]:appearence==='ghost',
     [styles.right]:arrow==='right',

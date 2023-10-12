@@ -81,7 +81,7 @@ export default withLayout(index);
 
 
 export const getServerSideProps:GetServerSideProps<HomeProps>=async ({}) =>{
- const firstcategory=0
+ const firstcategory=1
   const {data:menu}=await axios.post<MenuItem[]>(`${process.env.NEXT_PUBLIC_DOMAIN}api/page-find`,{firstcategory})
   return{
     props:{

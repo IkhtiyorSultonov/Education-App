@@ -13,7 +13,7 @@ export interface PageModel{
     hh:HhData[];
     advantages:AdvantegData[];
     category:string;
-
+    
     
 }
 
