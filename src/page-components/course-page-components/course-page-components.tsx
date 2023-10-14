@@ -1,6 +1,6 @@
 import { CoursePageComponentProps } from "./course-page-components.props";
 import styles from "./course-page-components.module.css";
-import { Advantages, Heading, HhData, Products, Tag, Text } from "@/components";
+import { Advantages, Heading, HhData, Products, Sort, Tag, Text } from "@/components";
 
 const coursePageComponents = ({
   firstCategory,
@@ -13,7 +13,7 @@ const coursePageComponents = ({
       {/*TITLE*/}
       <div className={styles.title}>
         <Heading tag="h1">{page.title}</Heading>
-        <div>Sort...</div>
+       <Sort />
       </div>
       {/*PRODUCTS*/}
       <div>{products && products.map((c, idx) => <Products key={idx} product={c} />)}</div>
