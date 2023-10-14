@@ -42,7 +42,7 @@ const Menu = (): JSX.Element => {
                     <span>{c.name}</span>
                 </div>
               </Link>
-              {c.id==firstCategory||buildSecondLevel(c)}
+              {c.id==firstCategory ||buildSecondLevel(c)}
               </>
           </div>
         ))}

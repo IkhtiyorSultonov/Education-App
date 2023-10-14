@@ -5,7 +5,7 @@ import cn from "classnames"
 import Link from 'next/link'
 import Logo from "../logo.svg"
 import styes from "./sidebar.module.css"
-import { Diveder } from '@/components'
+import { Diveder, Search } from '@/components'
 const sidebar = ({className,...props}:SidebarProps):JSX.Element => {
   return (
     <div className={cn(className,styes.sidebar)} {...props} >
@@ -13,7 +13,7 @@ const sidebar = ({className,...props}:SidebarProps):JSX.Element => {
         <Logo/>
         <Diveder/>
       </Link>
-      <div>Search...</div>
+      <Search/>
       <Menu/>
     </div>
   )
