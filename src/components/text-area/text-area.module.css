@@ -16,3 +16,19 @@
 {
     color: var(--gray);
 }
+.TextAreaWrapper
+{
+    position: relative;
+}
+
+.error
+{
+    outline-color:var(--red) 
+}
+.errorMessage
+{
+    position: absolute;
+    bottom: -15px;
+    left: 0;
+    color: var(--red);
+}

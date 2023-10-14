@@ -16,7 +16,7 @@ const Menu = (): JSX.Element => {
 		setMenu &&
 			setMenu(
 				menu.map(c => {
-					if (c._id.secondCategory === category) {
+					if (c._id.secondCategory ===category) {
 						c.isOpened = !c.isOpened;
 					}
    

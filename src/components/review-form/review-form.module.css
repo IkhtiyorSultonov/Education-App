@@ -3,7 +3,7 @@
     display: grid;
     grid-template-columns: [start] auto  1fr auto auto [end];
     align-items: center;
-    gap: 10px;
+    gap: 30px 30px;
     font-size: 14px;
     line-height: 24px;
 }
@@ -29,10 +29,19 @@
 }
 
 .submit{
-    grid-column: start/end;
+   
+	grid-column: start/end;
+}
+.reviewForm{
+	gap: 20px 30px;
+}
+@media (max-width:1150.99px) {
+    .rating{
+		grid-column: start / end;
+	}
 }
 @media  (max-width: 740px) {
-	.reviewForm {
+	.form {
 		grid-template-columns: [start] 1fr 1fr [end];
 	}
 	.rating{
