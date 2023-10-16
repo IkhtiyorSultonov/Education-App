@@ -9,7 +9,7 @@ export  {default as Card  } from './card/card'
 export {default as Diveder}  from "./diveder/divder"
 export {default as HhData}  from "./hhdata/hh-data"
 export {default as Advantages}  from "./Advantages/Advantages"
-export {default as Products}  from "./product/produc"
+export {default as Products}  from "./product/product"
 export {default as Review}  from "./review/review"
 export {default as ReviewForm}  from "./review-form/review-form"
 export {default as Search}  from "./Search/search"

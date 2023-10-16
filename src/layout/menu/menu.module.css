@@ -43,14 +43,7 @@
     background-color: rgba(245,245,204, .4);
     border:1px solid #e5e5e5 ;
 }
-.secondLevelBlock
-{
-    display: none;
-}
-.secondLevelBlockActive
-{
-    display: block;
-}
+
 
 .thirdlevel
 {

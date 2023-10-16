@@ -1,18 +1,20 @@
-import React, { useState } from "react";
+import React, { useState,useRef } from "react";
 import styles from "./product.module.css";
 import { productProps } from "./product.props";
 import { Button, Card, Diveder, Rating, Review, ReviewForm, Tag } from "..";
 import Image from "next/image";
-import cn from "classnames"
-import { convertToUSD } from "@/helpers/helpers";
+import cn from "classnames";
+import { convertToUSD, dedectReview } from "@/helpers/helpers";
 
-const product = ({
-  product,
-  className,
-  ...props
+export const product = ({
+  product, className, ...props
 }: productProps): JSX.Element => {
-  const [reviewOpen, setreviewOpen] = useState<boolean>(false)
-
+  const [reviewOpen, setreviewOpen] = useState<boolean>(false);
+  const ReviewRef = useRef<HTMLDivElement>(null)
+  const scrollToReview = () => {
+		setreviewOpen(true);
+		ReviewRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' })
+  }
   return (
     <div className={className}>
       <Card className={styles.product}>
@@ -21,8 +23,7 @@ const product = ({
             src={product.images}
             alt={product.title}
             width={70}
-            height={70}
-          />
+            height={70} />
         </div>
         <div className={styles.title}>{product.title}</div>
         <div className={styles.price}>
@@ -50,13 +51,13 @@ const product = ({
         </div>
         <div className={styles.priceTitle}>Price</div>
         <div className={styles.creditTitle}>Credit</div>
-        <div className={styles.rateTitle}>{product.reviewCount} reviews</div>
+        <div className={styles.rateTitle}>{product.reviewCount} <a href="#Review" onClick={scrollToReview}> {dedectReview(product.reviewCount)}</a></div>
         <Diveder className={styles.hr} />
 
         <div className={styles.description}>{product.description}</div>
-          <div className={styles.features}>
-            {product.characteristics.length &&
-              product.characteristics.map((ch) => (
+        <div className={styles.features}>
+          {product.characteristics.length &&
+            product.characteristics.map((ch) => (
               <div className={styles.characteristic} key={ch.name}>
                 <span className={styles.characteristicName}>{ch.name}</span>
                 <span className={styles.characteristicDots}></span>
@@ -72,40 +73,42 @@ const product = ({
               <div>{product.advantages}</div>
             </div>
           )}
-         
-        {product.disadvantages && (
+
+          {product.disadvantages && (
             <div className={styles.disadvantages}>
               <div className={styles.disadvantageTitle}>Disadvantages</div>
               <div>{product.disadvantages}</div>
             </div>
           )}
         </div>
-       
+
 
         <Diveder className={styles.hr2} />
 
         <div className={styles.actions}>
           <Button appearence="primary">More Details</Button>
-          <Button appearence="ghost" arrow={reviewOpen?'down':'right'} className={styles.reviewBtn} onClick={()=>setreviewOpen(prev=>!prev)}>Review</Button>
+          <Button appearence="ghost" arrow={reviewOpen ? 'down' : 'right'} className={styles.reviewBtn} onClick={() => setreviewOpen(prev => !prev)}>Review</Button>
         </div>
       </Card>
 
-      <Card color="white" className={cn(styles.review,{
-        [styles.reviewOpen]:reviewOpen,
-        [styles.reviewClose]:!reviewOpen
+      <Card color="white" ref={ReviewRef}className={cn(styles.review, {
+        [styles.reviewOpen]: reviewOpen,
+        [styles.reviewClose]: !reviewOpen
       })}>
-        {product.reviews.map(r=>(
+        {product.reviews.map(r => (
           <div key={r._id}>
-           <Review review={r}/>
-           <Diveder/>
+            <Review review={r} />
+            <Diveder />
           </div>
         ))}
-     
-       <ReviewForm productid={product._id}/>  
-      
+
+        <ReviewForm productid={product._id} />
+
       </Card>
     </div>
   );
 };
 
-export default product;
+
+
+export default product
