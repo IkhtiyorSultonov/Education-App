@@ -18,18 +18,18 @@
     background-color: var(--primary-hover);
 }
 
-.white{
-    background-color: var(--white);
+.white {
+	background-color: var(--white);
 }
 
-.white svg*{
-    fill: var(--primary);
+.white svg * {
+	fill: var(--primary);
 }
 
-.white:hover{
-    background-color: var(--primary);
+.white:hover {
+	background-color: var(--primary);
 }
 
-.white:hover svg* {
-    fill: var(--white);
+.white:hover svg * {
+	fill: var(--white);
 }

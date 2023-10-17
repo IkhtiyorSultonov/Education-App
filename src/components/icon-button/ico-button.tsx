@@ -8,7 +8,7 @@ const IcoButton = ({appearance,icon,className,...props}:IcoButtonProps):JSX.Elem
 
         <button className={cn(styles.iconButton,className,{
             [styles.primary]:appearance=="primary",
-            [styles.primary]:appearance=="white",
+            [styles.white]:appearance=="white",
         })}
         {...props}
         >

@@ -4,6 +4,7 @@ import styles from "./scroll-up.module.css";
 import { motion,  } from "framer-motion";
 import { useScrollY } from "@/hooks/useScrollY";
 import IcoButton from "../icon-button/ico-button";
+
 const ScrollUp = () => {
   const ScrolltoTop = () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
