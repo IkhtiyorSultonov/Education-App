@@ -132,16 +132,9 @@
     margin-left: 15px;
 }
 
-.reviewOpen {
-    max-height: auto;
+.reviews{
     overflow: hidden;
     padding: 30px;
-}
-
-.reviewClose {
-    max-height: 0;
-    overflow: hidden;
-    padding: 0;
 }
 
 @media (max-width:1360.99px) {

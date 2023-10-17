@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from "react";
 import styles from "./scroll-up.module.css";
-import IcoScroll from "./IcoScroll.svg";
+
 import { motion,  } from "framer-motion";
 import { useScrollY } from "@/hooks/useScrollY";
+import IcoButton from "../icon-button/ico-button";
 const ScrollUp = () => {
   const ScrolltoTop = () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
@@ -26,7 +27,7 @@ const ScrollUp = () => {
       whileHover={{scale:1.2, transition:{duration:0.6}}}
       onClick={ScrolltoTop}
     >
-      <IcoScroll className={styles.IcoScroll} />
+      <IcoButton appearance="white" icon="Up"/>
     </motion.button>
   );
 };
