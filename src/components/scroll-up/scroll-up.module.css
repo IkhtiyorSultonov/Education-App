@@ -1,0 +1,17 @@
+.ScrollUp
+{
+    width: 40px;
+    height: 40px;
+    background-color: var(--primary);
+    cursor: pointer;
+    position: fixed;
+    bottom: 30px;
+    border-radius: 7px;
+    right: 30px;
+    border: none;
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.5);
+}
+
+.IcoScroll:hover{
+    background-color: var(--primary);
+}
