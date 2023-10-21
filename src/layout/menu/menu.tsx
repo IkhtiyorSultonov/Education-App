@@ -37,7 +37,7 @@ const Menu = (): JSX.Element => {
     setMenu &&
       setMenu(
         menu.map((c) => {
-          if (c._id.secondCategory === category) {
+          if (c._id.secondCategory===category) {
             c.isOpened = !c.isOpened;
           }
 
@@ -49,24 +49,28 @@ const Menu = (): JSX.Element => {
   const buildFirstLevel = () => {
     return (
       <>
-        {firstLevelMenu.map((c) => (
+      {firstLevelMenu.map(c => {
+        
+        return (
+          
           <div key={c.route}>
             <>
-              <Link href={c.route}>
+              <Link href={`/${c.route}/${menu[0].pages[0]._id}`}>
                 <div
                   className={cn(styles.firstLevel, {
-                    [styles.firstLevelActive]: c.id === firstCategory,
+                    [styles.firstLevelActive]: c.id ===firstCategory,
                   })}
                 >
                   {c.icon}
                   <span>{c.name}</span>
                 </div>
               </Link>
-              {c.id == firstCategory || buildSecondLevel(c)}
+              {c.id ===firstCategory || buildSecondLevel(c)}
             </>
           </div>
-        ))}
-      </>
+        );
+      })}
+    </>
     );
   };
   const buildSecondLevel = (menuItem: IFirstlevelMenu) => {

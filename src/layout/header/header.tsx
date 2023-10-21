@@ -5,6 +5,7 @@ import styles from "./header.module.css"
 import IcoButton from '@/components/icon-button/ico-button'
 import { motion } from 'framer-motion'
 import cn from 'classnames'
+import Link from 'next/link'
 
 
 const header = ({className,...props}:HeaderProps):JSX.Element => {
@@ -25,7 +26,9 @@ const header = ({className,...props}:HeaderProps):JSX.Element => {
   }
   return (
     <div {...props} className={cn(styles.header)}>
-      <LogoIco/>
+	    <Link href={'/'}>
+				<LogoIco/>
+			</Link>
       <IcoButton appearance='white' icon='Menu' className={styles.openMenu} onClick={toggleMenu}/>
       <motion.div  className={styles.mobileMenu}  variants={variants} animate={Open?"Opened":"Closed"} initial={'Closed'}>
         <IcoButton appearance='white' icon='Close' className={styles.CloseMenu} onClick={toggleMenu}/>

@@ -1,7 +1,7 @@
 import React, { Fragment } from 'react'
 import styles from "./home-page.module.css"
 import { Footer, Navbar } from '@/layout'
-import { Button, Card, Heading, Text } from '@/components'
+import { Button, Card, Heading, ScrollUp, Text } from '@/components'
 import Image from 'next/image'
 import { company, timeLineList } from '@/helpers/constants'
 import { Timeline,TimelineEvent } from 'react-event-timeline'
@@ -63,6 +63,7 @@ const homepage = () => {
 					))}
 				</div>
 			</div>
+			<ScrollUp/>
 			<Footer />
 		</div>
 	);
