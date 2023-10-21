@@ -7,6 +7,7 @@ import styles from './layout.module.css';
 import { AppContextProvider, IAppContext } from '@/context/context';
 import { ScrollUp } from '@/components';
 import { Router, useRouter } from 'next/router';
+import Seo from './seo/seo';
 
 const Layout = ({ children }: LayoutProps): JSX.Element => {
 	return (
@@ -29,7 +30,9 @@ export const withLayout = <T extends Record<string, unknown> & IAppContext>(Comp
 		return (
 
 			<AppContextProvider menu={props.menu} firstCategory={props.firstCategory}>
-				{router.asPath==='/'?<Component {...props}/>:
+				{router.asPath==='/'?<Seo>
+				<Component {...props}/>
+				</Seo>:
 					<Layout>
 					<Component {...props} />
 				</Layout>

@@ -7,7 +7,7 @@ export default function App({ Component, pageProps }:AppProps):JSX.Element {
 
  
   return<>
-   <NextNProgress height={5}/>
+   <NextNProgress height={5} options={{ showSpinner: false }}/>
    <Component {...pageProps} />
   </>
 }

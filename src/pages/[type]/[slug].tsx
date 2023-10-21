@@ -3,6 +3,7 @@ import { MenuItem } from "@/interfaces/menu.interface";
 import { PageCategory, PageModel } from "@/interfaces/page.interface";
 import { ProductModel } from "@/interfaces/product.interface";
 import { withLayout } from "@/layout/layout"
+import Seo from "@/layout/seo/seo";
 import { CoursePageComponents } from "@/page-components";
 import axios from "axios"
 import { GetServerSideProps } from "next"
@@ -11,7 +12,9 @@ import { GetServerSideProps } from "next"
 
 const Index = ({products,firstCategory,page}:PageProps) => {
   return (
-    <CoursePageComponents products={products} page={page} firstCategory={firstCategory}/>
+   <Seo metaTitle={page.title} metaDescription={page.description} metaKeyword={page.tags.toString()}>
+     <CoursePageComponents products={products} page={page} firstCategory={firstCategory}/>
+   </Seo>
   )
 }
 

@@ -13,25 +13,21 @@
 }
 .header
 {
-    border: 1px solid red;
     grid-area: header;
     display: none;
 }
 
 .footer
 {
-    border: 1px solid red;
     grid-area: footer;
     
 }
 .sidebar
 {
     grid-area: sidebar;
-    border: 1px solid red;
 }
 .body {
     grid-area: body;
-    border: 1px solid red;
     padding: 10px;
 }
 
