@@ -12,7 +12,7 @@ import { GetServerSideProps } from "next"
 
 const Index = ({products,firstCategory,page}:PageProps) => {
   return (
-   <Seo metaTitle={page.title} metaDescription={page.description} metaKeyword={page.tags.toString()}>
+   <Seo metaTitle={page.title} metaDescription={page.description}>
      <CoursePageComponents products={products} page={page} firstCategory={firstCategory}/>
    </Seo>
   )
@@ -20,9 +20,8 @@ const Index = ({products,firstCategory,page}:PageProps) => {
 
 export default withLayout(Index)
 
-export const getServerSideProps:GetServerSideProps<PageProps> = async ({ query }) => {
+export const getServerSideProps:GetServerSideProps = async ({ query }) => {
     const {slug,type}=query;
-    const firstcategory=0;
     const firstCategortitem=firstLevelMenu.find(c=>c.route===type)
     const {data:menu}=await axios.post<MenuItem[]>(`${process.env.NEXT_PUBLIC_DOMAIN}api/page-find`,{firstcategory:firstCategortitem?.id})
     const {data:page}=await axios.get<PageModel>(`${process.env.NEXT_PUBLIC_DOMAIN}api/page-find/${slug}`);
