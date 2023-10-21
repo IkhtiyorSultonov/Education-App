@@ -5,7 +5,7 @@ import { ForwardedRef, forwardRef, useEffect, useState } from 'react';
 import StarIcon from './rating.svg';
 
 const Rating = forwardRef(
-	({ rating, isEditablet = false, setReting, error ,...props }: RatingProps, ref: ForwardedRef<HTMLDivElement>): JSX.Element => {
+	({ rating, isEditabled=false, setRating, error ,...props }: RatingProps, ref: ForwardedRef<HTMLDivElement>): JSX.Element => {
 		const [ratingArray, setRatingArray] = useState<JSX.Element[]>(new Array(5).fill(<></>));
 
 		useEffect(() => {
@@ -17,7 +17,7 @@ const Rating = forwardRef(
 				<span
 					className={cn(styles.star, {
 						[styles.filled]: idx < currentRating,
-						[styles.editable]: isEditablet,
+						[styles.editable]: isEditabled,
 					})}
 					onMouseEnter={() => chnageRatingDisplay(idx + 1)}
 					onMouseLeave={() => chnageRatingDisplay(rating)}
@@ -31,7 +31,7 @@ const Rating = forwardRef(
 		};
 
 		const chnageRatingDisplay = (index: number) => {
-			if (!isEditablet) {
+			if (!isEditabled) {
 				return;
 			}
 
@@ -39,10 +39,10 @@ const Rating = forwardRef(
 		};
 
 		const clickRatingHandler = (index: number) => {
-			if (!isEditablet || !setReting) {
+			if (!isEditabled || !setRating) {
 				return;
 			}
-			setReting(index);
+			setRating(index);
 		};
 
 		return (

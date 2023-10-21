@@ -51,13 +51,7 @@ export const product = motion(forwardRef(({
           <span className={styles.month}>month</span>
         </div>
         <div className={styles.rating}>
-          <Rating   rating={product.initialRating} error={{
-            type: "pattern",
-            root: undefined,
-            ref: undefined,
-            types: undefined,
-            message: undefined
-          }} />
+        <Rating rating={product.initialRating} />
         </div>
         <div className={styles.tags}>
           {product.tags.length &&

@@ -69,8 +69,7 @@ const ReviewForm = ({
             name="rating"
             render={({ field }) => (
               <Rating
-                isEditablet
-                setReting={field.onChange}
+            
                 error={errors.rating}
                 rating={field.value}
                 ref={field.ref}
@@ -88,7 +87,7 @@ const ReviewForm = ({
           error={errors.dscription}
         />
         <div className={styles.submit}>
-          <Button appearence="primary">Submit</Button>
+          <Button size="m" appearence="primary">Submit</Button>
           <span className={styles.info}>
             * Your review will be moderated and reviewed before being published.
           </span>
