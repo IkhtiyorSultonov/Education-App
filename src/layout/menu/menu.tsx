@@ -33,7 +33,7 @@ const Menu = (): JSX.Element => {
       height:0,
     },
   }
-  const openSecondBlok = (category: string) => {
+  const openSecondBlok = (category:string) => {
     setMenu &&
       setMenu(
         menu.map((c) => {
@@ -74,7 +74,7 @@ const Menu = (): JSX.Element => {
       <div className={styles.secondBlock}>
         {menu.map((q) => {
           if (q.pages.map((p) => p._id).includes(router.asPath.split("/")[2])) {
-            q.isOpened = true;
+           q.isOpened==true 
           }
 
           return (

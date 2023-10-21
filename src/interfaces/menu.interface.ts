@@ -8,7 +8,6 @@ export interface MenuItem {
     };
 
     isOpened?:boolean;
-
     pages:PageItem[];
 }
 export interface PageItem {
