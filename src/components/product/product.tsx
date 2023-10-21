@@ -51,7 +51,13 @@ export const product = motion(forwardRef(({
           <span className={styles.month}>month</span>
         </div>
         <div className={styles.rating}>
-          <Rating rating={product.initialRating} />
+          <Rating   rating={product.initialRating} error={{
+            type: "pattern",
+            root: undefined,
+            ref: undefined,
+            types: undefined,
+            message: undefined
+          }} />
         </div>
         <div className={styles.tags}>
           {product.tags.length &&
@@ -98,8 +104,8 @@ export const product = motion(forwardRef(({
         <Diveder className={styles.hr2} />
 
         <div className={styles.actions}>
-          <Button appearence="primary">More Details</Button>
-          <Button appearence="ghost" arrow={reviewOpen ? 'down' : 'right'} className={styles.reviewBtn} onClick={() => setreviewOpen(prev => !prev)}>Review</Button>
+          <Button size="m" appearence="primary">More Details</Button>
+          <Button size="m" appearence="ghost" arrow={reviewOpen ? 'down' : 'right'} className={styles.reviewBtn} onClick={() => setreviewOpen(prev => !prev)}>Review</Button>
         </div>
       </Card>
 
