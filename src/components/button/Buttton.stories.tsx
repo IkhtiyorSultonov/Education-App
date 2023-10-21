@@ -81,14 +81,3 @@ export const Ghost:Story = {
   };
 
 
-export const Arrow:Story=({ ...args })=>{
-	const [toggle, setToggle] = useState<boolean>(false);
-
-	const toggleButton = () => setToggle(prev => !prev);
-
-	return (
-		<Button size='m' appearence='primary' arrow='right' onClick={toggleButton} {...args}>
-			Button
-		</Button>
-	);
-};
