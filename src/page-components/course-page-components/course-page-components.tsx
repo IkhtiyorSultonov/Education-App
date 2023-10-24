@@ -74,13 +74,13 @@ const animations = {
       <Text>{page.description}</Text>
       {/*SKILLS*/}
 
-      <Heading tag="h2">Skills</Heading>
-      {page.tags.length &&
+      {/* <Heading tag="h2">Skills</Heading>
+      {
         page.tags.map((c) => (
-          <Tag color="primary" key={c}>
+          <Tag  color="primary" key={c}>
             {c}
           </Tag>
-        ))}
+        ))} */}
     </div>
   );
 };

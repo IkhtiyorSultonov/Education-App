@@ -14,7 +14,6 @@ const IcoButton = ({appearance,icon,className,...props}:IcoButtonProps):JSX.Elem
         >
             <IconComponents/>
         </button>
-  
   )
 }
 

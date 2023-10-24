@@ -17,15 +17,15 @@ export interface PageModel{
     
 }
 
+export interface AdvantegData{
+    title:string;
+    description:string;
+    id:string;
+}
+
 export interface HhData{
     count:number;
     juniorSalary:number;
     middleSalary:number;
     seniorSalary:number;
-}
-
-export interface AdvantegData{
-    title:string;
-    description:string;
-    id:string;
 }
