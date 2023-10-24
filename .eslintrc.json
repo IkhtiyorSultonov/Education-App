@@ -1,0 +1,13 @@
+{
+	"root": true,
+	"parser": "@typescript-eslint/parser",
+	"plugins": ["@typescript-eslint"],
+	"rules": {
+		"semi": ["off"],
+		"@typescript-eslint/semi": "off",
+		"no-unexpected-multiline": "error",
+		"@typescript-eslint/no-unused-vars":"off",
+		"no-mixed-spaces-and-tabs": 0 // disable rule
+	  },
+	"extends": ["eslint:recommended", "plugin:@typescript-eslint/eslint-recommended", "plugin:@typescript-eslint/recommended"]
+}

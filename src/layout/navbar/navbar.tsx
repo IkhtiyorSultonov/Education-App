@@ -4,7 +4,7 @@ import styles from "./navbar.module.css"
 import Link from 'next/link';
 import { LogoIco } from '..';
 import { navLinks } from '@/helpers/constants';
-import { IconButton, Search, Text } from '@/components';
+import { Search, Text } from '@/components';
 import IcoButton from '@/components/icon-button/ico-button';
 const navbar = () => {
     const [isOpen, setIsOpen] = useState<boolean>(false);

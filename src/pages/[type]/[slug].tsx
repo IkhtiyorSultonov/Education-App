@@ -1,6 +1,6 @@
 import { firstLevelMenu } from "@/helpers/constants";
 import { MenuItem } from "@/interfaces/menu.interface";
-import { PageCategory, PageModel } from "@/interfaces/page.interface";
+import {  PageModel } from "@/interfaces/page.interface";
 import { ProductModel } from "@/interfaces/product.interface";
 import { withLayout } from "@/layout/layout"
 import Seo from "@/layout/seo/seo";

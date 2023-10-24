@@ -5,10 +5,8 @@ import { SortReducer } from "./course.reducer";
 import { SortEnum } from "@/components/sort/sort.props";
 import { useEffect, useReducer } from "react";
 import { AnimatePresence } from "framer-motion";
-import { useScrollY } from "@/hooks/useScrollY";
 
 const coursePageComponents = ({
-  firstCategory,
   page,
   products,
 }: CoursePageComponentProps): JSX.Element => {

@@ -7,9 +7,7 @@ import styles from "./search.module.css"
 import { useRouter } from 'next/router'
 import { AppContext } from '@/context/context'
 import { PageItem } from '@/interfaces/menu.interface'
-import Link from 'next/link'
-
-const search = ({className,...props}:SearchProps):JSX.Element => {
+const search = ({className, ...props}:SearchProps):JSX.Element => {
     const {menu} =useContext(AppContext)
     const [Response, setResponse] = useState<PageItem[]>([])
     

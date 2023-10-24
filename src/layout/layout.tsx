@@ -6,7 +6,7 @@ import Sidebar from './sidebar/sidebar';
 import styles from './layout.module.css';
 import { AppContextProvider, IAppContext } from '@/context/context';
 import { ScrollUp } from '@/components';
-import { Router, useRouter } from 'next/router';
+import { useRouter } from 'next/router';
 import Seo from './seo/seo';
 
 const Layout = ({ children }: LayoutProps): JSX.Element => {

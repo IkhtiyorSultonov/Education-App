@@ -1,3 +1,4 @@
+/*eslint-disable semi*/
 import React from 'react'
 import styles from "./Advantages.module.css"
 import CheckIcon from "./check.svg"
